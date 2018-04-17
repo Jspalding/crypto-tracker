@@ -43,11 +43,8 @@ class App extends Component {
       <div className="App">
 
       <Header />
-      <div className="Ribbon"></div>
 
         <div className="Wrapper">
-
-            <h1>Crypto Overview</h1>
 
             <MainTable />
 
