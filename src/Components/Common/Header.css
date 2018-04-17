@@ -1,0 +1,22 @@
+.Header {
+    background-color: #e50742;
+    color: #fff;
+    padding: 10px 50px;
+    font-weight: 800;
+    position: fixed;
+    top: 0;
+    width:100%;
+}
+
+.Header img {
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.Header h1 {
+    display:inline-block;
+    font-size: 1.2em;
+    margin: 0;
+    vertical-align: middle;
+}

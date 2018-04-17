@@ -1,0 +1,23 @@
+.Main-table {
+    width: 100%;
+}
+
+.Main-table thead {
+    padding: 10px 0px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.Main-table tr td {
+    padding: 10px 0px;
+    text-align: left;
+    width: 1%;
+}
+
+.percent-down {
+    color: red;
+}
+
+.percent-up {
+    color: green;
+}
