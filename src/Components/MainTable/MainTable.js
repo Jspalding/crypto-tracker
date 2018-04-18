@@ -17,11 +17,15 @@ class MainTable extends React.Component {
             loading: false,
             coins: [],
             error: null,
-        };
+        }
     }
 
     componentDidMount() {
+        this.fetchCoins();
+        setInterval(this.fetchCoins, 300000);
+    }
 
+    fetchCoins = () => {
         this.setState({ loading: true })
 
         fetch(`${API_URL}?limit=25`)
@@ -73,9 +77,11 @@ class MainTable extends React.Component {
         }
 
         return (
-            <Table
-            coins={coins}
-            percentageChange={this.percentageChange} />
+            <div>
+                <Table
+                coins={coins}
+                percentageChange={this.percentageChange} />
+            </div>
         );
     }
 }
