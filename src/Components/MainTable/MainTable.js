@@ -61,6 +61,11 @@ class MainTable extends React.Component {
         }
     }
 
+    //Used to display only 5 decimals, mainly for price.
+    toDecimals = (num) => {
+        return Number.parseFloat(num).toFixed(5);
+    }
+
     render() {
 
         const { loading, coins, error } = this.state;
@@ -91,12 +96,14 @@ class MainTable extends React.Component {
                 <select value={this.state.fiat} onChange={this.fiatChangeHandler}>
                     <option value="USD">USD</option>
                     <option value="GBP">GBP</option>
+                    <option value="BTC">BTC</option>
                 </select>
 
                 <Table
                 coins={coins}
                 fiat={this.state.fiat}
-                percentageChange={this.percentageChange} />
+                percentageChange={this.percentageChange}
+                decimals={this.toDecimals} />
 
             </div>
         );

@@ -2,10 +2,49 @@ import React from 'react';
 import './Table.css';
 import TableUsd from './TableConditionals/TableUsd';
 import TableGbp from './TableConditionals/TableGbp';
+import TableBtc from './TableConditionals/TableBtc';
 
 const Table = (props) => {
 
-    const {coins, percentageChange, fiat} = props;
+    const {coins, percentageChange, fiat, decimals} = props;
+
+    let TableCurrency = null;
+
+    if (fiat === 'USD') {
+        TableCurrency = 
+            <TableUsd coins={coins}
+            fiat={fiat}
+            percentageChange={percentageChange} 
+            decimals={decimals}
+            />;
+    }
+    else if (fiat ==='GBP') {
+        TableCurrency = 
+            <TableGbp
+            coins={coins}
+            fiat={fiat}
+            percentageChange={percentageChange} 
+            decimals={decimals}
+            />;
+    }
+    else if (fiat === 'BTC') {
+        TableCurrency = 
+            <TableBtc
+            coins={coins}
+            fiat={fiat}
+            percentageChange={percentageChange} 
+            decimals={decimals}
+            />;
+    } 
+    else {
+        TableCurrency = 
+            <TableUsd
+            coins={coins}
+            fiat={fiat}
+            percentageChange={percentageChange} 
+            decimals={decimals}
+            />
+    }
 
     return (
 
@@ -23,20 +62,7 @@ const Table = (props) => {
                     </tr>
                 </thead>
 
-                {fiat === 'USD' ? (
-                        <TableUsd
-                        coins={coins}
-                        fiat={fiat}
-                        percentageChange={percentageChange} 
-                        />
-                    ) : (
-                        <TableGbp
-                        coins={coins}
-                        fiat={fiat}
-                        percentageChange={percentageChange} 
-                        />
-                    )
-                }
+                {TableCurrency}
 
             </table>
 
