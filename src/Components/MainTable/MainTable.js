@@ -17,6 +17,7 @@ class MainTable extends React.Component {
             loading: false,
             coins: [],
             error: null,
+            fiat: 'USD',
         }
     }
 
@@ -28,7 +29,7 @@ class MainTable extends React.Component {
     fetchCoins = () => {
         this.setState({ loading: true })
 
-        fetch(`${API_URL}?limit=25`)
+        fetch(`${API_URL}?convert=GBP&limit=25`)
         .then(fetchResponseHandler)
         .then((data) => {
             this.setState({ 
@@ -42,6 +43,12 @@ class MainTable extends React.Component {
                 loading: false
             })
         });
+    }
+
+    fiatChangeHandler = (event) => {
+        this.setState({
+            fiat: event.target.value
+        })
     }
 
     percentageChange = (percent) => {
@@ -77,10 +84,20 @@ class MainTable extends React.Component {
         }
 
         return (
-            <div>
+            <div className="main-table-container">
+
+                <h1>All Coins</h1>
+
+                <select value={this.state.fiat} onChange={this.fiatChangeHandler}>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>
+
                 <Table
                 coins={coins}
+                fiat={this.state.fiat}
                 percentageChange={this.percentageChange} />
+
             </div>
         );
     }

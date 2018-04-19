@@ -1,15 +1,15 @@
 import React from 'react';
 import './Table.css';
+import TableUsd from './TableConditionals/TableUsd';
+import TableGbp from './TableConditionals/TableGbp';
 
 const Table = (props) => {
 
-    const {coins, percentageChange} = props;
+    const {coins, percentageChange, fiat} = props;
 
     return (
 
         <div className="table-container">
-
-            <h1>All Coins</h1>
 
             <table className="Main-table">
                 <thead>
@@ -22,18 +22,22 @@ const Table = (props) => {
                         <th>24hr Change</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {coins.map((coins) => (
-                        <tr key={coins.id}>
-                            <td>{coins.rank}</td>
-                            <td>{coins.name} ({coins.symbol})</td>
-                            <td>${coins.price_usd}</td>
-                            <td>{coins.available_supply}</td>
-                            <td>${coins.market_cap_usd}</td>
-                            <td>{percentageChange(coins.percent_change_24h)}</td> 
-                        </tr>
-                    ))}
-                </tbody>
+
+                {fiat === 'USD' ? (
+                        <TableUsd
+                        coins={coins}
+                        fiat={fiat}
+                        percentageChange={percentageChange} 
+                        />
+                    ) : (
+                        <TableGbp
+                        coins={coins}
+                        fiat={fiat}
+                        percentageChange={percentageChange} 
+                        />
+                    )
+                }
+
             </table>
 
         </div>
