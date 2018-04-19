@@ -26,31 +26,34 @@ class MainTable extends React.Component {
         setInterval(this.fetchCoins, 300000);
     }
 
+    //Main API call
     fetchCoins = () => {
         this.setState({ loading: true })
 
         fetch(`${API_URL}?convert=GBP&limit=25`)
-        .then(fetchResponseHandler)
-        .then((data) => {
-            this.setState({ 
-                coins: data, 
-                loading: false 
+            .then(fetchResponseHandler)
+            .then((data) => {
+                this.setState({
+                    coins: data,
+                    loading: false
+                })
             })
-        })
-        .catch((error) => {
-            this.setState({
-                error: error.error,
-                loading: false
-            })
-        });
+            .catch((error) => {
+                this.setState({
+                    error: error.error,
+                    loading: false
+                })
+            });
     }
 
+    //Simple handler to take input to change currency view
     fiatChangeHandler = (event) => {
         this.setState({
             fiat: event.target.value
         })
     }
 
+    //Changes percentage display depending on value
     percentageChange = (percent) => {
         if (percent > 0) {
             return <span className="percent-up">{percent}% <img src="img/chev-up.png" /></span>
@@ -68,23 +71,23 @@ class MainTable extends React.Component {
 
     render() {
 
-        const { loading, coins, error } = this.state;
+        const { loading, coins, error, fiat } = this.state;
 
         //Renders while loading data from API
         if (loading) {
             return (
-            <div className="loader-wrapper">   
-                <Loader />
-            </div> 
+                <div className="loader-wrapper">
+                    <Loader />
+                </div>
             );
         }
 
         //Renders if error getting data
         if (error) {
             return (
-            <div className="loader-wrapper">   
-                <p>{error}</p>
-            </div> 
+                <div className="loader-wrapper">
+                    <p>{error}</p>
+                </div>
             );
         }
 
@@ -93,17 +96,17 @@ class MainTable extends React.Component {
 
                 <h1>All Coins</h1>
 
-                <select value={this.state.fiat} onChange={this.fiatChangeHandler}>
+                <select value={fiat} onChange={this.fiatChangeHandler}>
                     <option value="USD">USD</option>
                     <option value="GBP">GBP</option>
                     <option value="BTC">BTC</option>
                 </select>
 
                 <Table
-                coins={coins}
-                fiat={this.state.fiat}
-                percentageChange={this.percentageChange}
-                decimals={this.toDecimals} />
+                    coins={coins}
+                    fiat={fiat}
+                    percentageChange={this.percentageChange}
+                    decimals={this.toDecimals} />
 
             </div>
         );

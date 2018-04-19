@@ -1,48 +1,51 @@
 import React from 'react';
 import './Table.css';
+
 import TableUsd from './TableConditionals/TableUsd';
 import TableGbp from './TableConditionals/TableGbp';
 import TableBtc from './TableConditionals/TableBtc';
 
 const Table = (props) => {
 
-    const {coins, percentageChange, fiat, decimals} = props;
+    const { coins, percentageChange, fiat, decimals } = props;
 
     let TableCurrency = null;
 
+    //bit dirty, not sure if should be switch or not
     if (fiat === 'USD') {
-        TableCurrency = 
-            <TableUsd coins={coins}
-            fiat={fiat}
-            percentageChange={percentageChange} 
-            decimals={decimals}
+        TableCurrency =
+            <TableUsd 
+                coins={coins}
+                fiat={fiat}
+                percentageChange={percentageChange}
+                decimals={decimals}
             />;
     }
-    else if (fiat ==='GBP') {
-        TableCurrency = 
+    else if (fiat === 'GBP') {
+        TableCurrency =
             <TableGbp
-            coins={coins}
-            fiat={fiat}
-            percentageChange={percentageChange} 
-            decimals={decimals}
+                coins={coins}
+                fiat={fiat}
+                percentageChange={percentageChange}
+                decimals={decimals}
             />;
     }
     else if (fiat === 'BTC') {
-        TableCurrency = 
+        TableCurrency =
             <TableBtc
-            coins={coins}
-            fiat={fiat}
-            percentageChange={percentageChange} 
-            decimals={decimals}
+                coins={coins}
+                fiat={fiat}
+                percentageChange={percentageChange}
+                decimals={decimals}
             />;
-    } 
+    }
     else {
-        TableCurrency = 
+        TableCurrency =
             <TableUsd
-            coins={coins}
-            fiat={fiat}
-            percentageChange={percentageChange} 
-            decimals={decimals}
+                coins={coins}
+                fiat={fiat}
+                percentageChange={percentageChange}
+                decimals={decimals}
             />
     }
 

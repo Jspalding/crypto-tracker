@@ -3,7 +3,7 @@ import './../Table.css';
 
 const TableUsd = (props) => {
 
-    const {coins, percentageChange, fiat, decimals} = props;
+    const { coins, percentageChange, fiat, decimals } = props;
 
     return (
 
@@ -16,7 +16,7 @@ const TableUsd = (props) => {
                     <td>${decimals(coins.price_usd)}</td>
                     <td>{coins.available_supply}</td>
                     <td>${coins.market_cap_usd}</td>
-                    <td>{percentageChange(coins.percent_change_24h)}</td> 
+                    <td>{percentageChange(coins.percent_change_24h)}</td>
                 </tr>
             ))}
         </tbody>

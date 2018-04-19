@@ -3,7 +3,7 @@ import './../Table.css';
 
 const TableGbp = (props) => {
 
-    const {coins, percentageChange, fiat, decimals} = props;
+    const { coins, percentageChange, fiat, decimals } = props;
 
     return (
 
@@ -16,7 +16,7 @@ const TableGbp = (props) => {
                     <td>£{decimals(coins.price_gbp)}</td>
                     <td>{coins.available_supply}</td>
                     <td>£{coins.market_cap_gbp}</td>
-                    <td>{percentageChange(coins.percent_change_24h)}</td> 
+                    <td>{percentageChange(coins.percent_change_24h)}</td>
                 </tr>
             ))}
         </tbody>
