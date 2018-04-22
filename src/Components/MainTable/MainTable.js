@@ -2,6 +2,7 @@ import React from "react";
 
 import Loader from "../Common/Loader";
 import Table from "./Table";
+import Search from "./TableSearch/Search";
 
 import { fetchResponseHandler } from "../../helpers";
 import { API_URL } from "../../config";
@@ -106,6 +107,11 @@ class MainTable extends React.Component {
           <option value="GBP">GBP</option>
           <option value="BTC">BTC</option>
         </select>
+
+        <form>
+          <input type="text" placeholder="Search" />
+          <button>Submit</button>
+        </form>
 
         <Table
           coins={coins}
