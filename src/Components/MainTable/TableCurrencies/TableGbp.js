@@ -1,13 +1,15 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
+
 import "./../Table.css";
 
 const TableGbp = props => {
-  const { coins, percentageChange, fiat, decimals } = props;
+  const { coins, percentageChange, fiat, decimals, history } = props;
 
   return (
     <tbody>
       {coins.map(coins => (
-        <tr key={coins.id}>
+        <tr key={coins.id} onClick={() => history.push(`/coins/${coins.id}`)}>
           <td>{coins.rank}</td>
           <td>
             {coins.name} ({coins.symbol})
@@ -22,4 +24,4 @@ const TableGbp = props => {
   );
 };
 
-export default TableGbp;
+export default withRouter(TableGbp);
