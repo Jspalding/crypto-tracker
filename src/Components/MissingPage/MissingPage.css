@@ -1,0 +1,19 @@
+.missing-page {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.missing-page h1 {
+    font-size: 50px;
+    margin-bottom: 60px;
+}
+
+.missing-page-link {
+    text-decoration: none;
+    border: 3px solid #ccc;
+    padding: 10px;
+    border-radius: 7px;
+    color: #585858;
+    font-weight: bold;
+    font-size: 20px;
+}
