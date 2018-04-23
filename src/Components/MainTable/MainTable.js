@@ -4,7 +4,7 @@ import Loader from "../Common/Loader";
 import Table from "./Table";
 import Search from "./TableSearch/Search";
 
-import { fetchResponseHandler } from "../../helpers";
+import { fetchResponseHandler, percentageChange, toDecimals } from "../../helpers";
 import { API_URL } from "../../config";
 
 import "./MainTable.css";
@@ -53,30 +53,6 @@ class MainTable extends React.Component {
     });
   };
 
-  //Changes percentage display depending on value
-  percentageChange = percent => {
-    if (percent > 0) {
-      return (
-        <span className="percent-up">
-          {percent}% <img src="img/chev-up.png" />
-        </span>
-      );
-    } else if (percent < 0) {
-      return (
-        <span className="percent-down">
-          {percent}% <img src="img/chev-down.png" />
-        </span>
-      );
-    } else {
-      return <span>{percent}</span>;
-    }
-  };
-
-  //Used to display only 5 decimals, mainly for price.
-  toDecimals = num => {
-    return Number.parseFloat(num).toFixed(5);
-  };
-
   render() {
     const { loading, coins, error, fiat } = this.state;
 
@@ -116,8 +92,8 @@ class MainTable extends React.Component {
         <Table
           coins={coins}
           fiat={fiat}
-          percentageChange={this.percentageChange}
-          decimals={this.toDecimals}
+          percentageChange={(percentageChange)}
+          decimals={(toDecimals)}
         />
       </div>
     );
