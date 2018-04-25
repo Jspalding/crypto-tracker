@@ -11,6 +11,10 @@
     color: #717171;
 }
 
+.Main-table tr {
+    cursor: pointer;
+}
+
 .Main-table tr td {
     padding: 10px 0px;
     text-align: center;

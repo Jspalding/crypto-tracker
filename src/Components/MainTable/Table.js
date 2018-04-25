@@ -15,7 +15,6 @@ const Table = props => {
     TableCurrency = (
       <TableUsd
         coins={coins}
-        fiat={fiat}
         percentageChange={percentageChange}
         decimals={decimals}
       />
@@ -24,7 +23,6 @@ const Table = props => {
     TableCurrency = (
       <TableGbp
         coins={coins}
-        fiat={fiat}
         percentageChange={percentageChange}
         decimals={decimals}
       />
@@ -33,7 +31,6 @@ const Table = props => {
     TableCurrency = (
       <TableBtc
         coins={coins}
-        fiat={fiat}
         percentageChange={percentageChange}
         decimals={decimals}
       />
@@ -42,7 +39,6 @@ const Table = props => {
     TableCurrency = (
       <TableUsd
         coins={coins}
-        fiat={fiat}
         percentageChange={percentageChange}
         decimals={decimals}
       />

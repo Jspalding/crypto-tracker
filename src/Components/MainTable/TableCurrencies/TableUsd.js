@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import "./../Table.css";
 
 const TableUsd = props => {
-  const { coins, percentageChange, fiat, decimals, history } = props;
+  const { coins, percentageChange, decimals, history } = props;
 
   return (
     <tbody>

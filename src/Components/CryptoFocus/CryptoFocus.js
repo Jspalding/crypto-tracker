@@ -1,12 +1,16 @@
 import React from "react";
 
 import Loader from "../Common/Loader";
+import FocusUsd from "./CryptoFocusCurrencies/FocusUsd";
+import FocusGbp from "./CryptoFocusCurrencies/FocusGbp";
+import FocusBtc from "./CryptoFocusCurrencies/FocusBtc";
 
 import {
   fetchResponseHandler,
   percentageChange,
   toDecimals
 } from "../../helpers";
+
 import { API_URL } from "../../config";
 
 import "./CryptoFocus.css";
@@ -35,7 +39,7 @@ class CryptoFocus extends React.Component {
 
     this.setState({ loading: true });
 
-    fetch(`${API_URL}${cryptoData}/`)
+    fetch(`${API_URL}${cryptoData}/?convert=GBP`)
       .then(fetchResponseHandler)
       .then(data => {
         this.setState({
@@ -53,6 +57,7 @@ class CryptoFocus extends React.Component {
 
   render() {
     const { loading, error, crypto } = this.state;
+    const { fiat } = this.props;
 
     //reuse loading components from maintable
     if (loading) {
@@ -70,21 +75,44 @@ class CryptoFocus extends React.Component {
       );
     }
 
+    let DetailCurrency = null;
+
+    if (fiat === "USD") {
+      DetailCurrency = (
+        <FocusUsd
+          crypto={crypto}
+          percentageChange={percentageChange}
+          decimals={toDecimals}
+        />
+      );
+    } else if (fiat === "GBP") {
+      DetailCurrency = (
+        <FocusGbp
+          crypto={crypto}
+          percentageChange={percentageChange}
+          decimals={toDecimals}
+        />
+      );
+    } else if (fiat === "BTC") {
+      DetailCurrency = (
+        <FocusBtc
+        crypto={crypto}
+          percentageChange={percentageChange}
+          decimals={toDecimals}
+        />
+      );
+    } else {
+      DetailCurrency = (
+        <FocusBtc
+        crypto={crypto}
+          percentageChange={percentageChange}
+          decimals={toDecimals}
+        />
+      );
+    }
+
     return (
-      <div>
-        {crypto.map(crypto => (
-          <ul key={crypto.id}>
-            <h1>
-              {crypto.name} ({crypto.symbol})
-            </h1>
-            {crypto.rank}
-            £{toDecimals(crypto.price_usd)}
-            {crypto.available_supply}
-            £{crypto.market_cap_usd}
-            {percentageChange(crypto.percent_change_24h)}
-          </ul>
-        ))}
-      </div>
+      <div>{DetailCurrency}</div>
     );
   }
 }

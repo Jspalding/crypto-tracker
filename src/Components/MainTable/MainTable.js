@@ -4,7 +4,11 @@ import Loader from "../Common/Loader";
 import Table from "./Table";
 import Search from "./TableSearch/Search";
 
-import { fetchResponseHandler, percentageChange, toDecimals } from "../../helpers";
+import {
+  fetchResponseHandler,
+  percentageChange,
+  toDecimals
+} from "../../helpers";
 import { API_URL } from "../../config";
 
 import "./MainTable.css";
@@ -16,8 +20,7 @@ class MainTable extends React.Component {
     this.state = {
       loading: false,
       coins: [],
-      error: null,
-      fiat: "USD"
+      error: null
     };
   }
 
@@ -46,13 +49,6 @@ class MainTable extends React.Component {
       });
   };
 
-  //Simple handler to take input to change currency view
-  fiatChangeHandler = event => {
-    this.setState({
-      fiat: event.target.value
-    });
-  };
-
   render() {
     const { loading, coins, error, fiat } = this.state;
 
@@ -78,22 +74,23 @@ class MainTable extends React.Component {
       <div className="main-table-container">
         <h1>All Coins</h1>
 
-        <select value={fiat} onChange={this.fiatChangeHandler}>
+        <select onChange={this.props.fiatChangeHandler}>
           <option value="USD">USD</option>
           <option value="GBP">GBP</option>
           <option value="BTC">BTC</option>
         </select>
 
-        <form>
+        {/*<form>
           <input type="text" placeholder="Search" />
           <button>Submit</button>
-        </form>
+        </form> */}
 
         <Table
           coins={coins}
           fiat={fiat}
-          percentageChange={(percentageChange)}
-          decimals={(toDecimals)}
+          percentageChange={percentageChange}
+          decimals={toDecimals}
+          fiat={this.props.fiat}
         />
       </div>
     );
