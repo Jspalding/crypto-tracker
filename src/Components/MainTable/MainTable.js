@@ -74,7 +74,7 @@ class MainTable extends React.Component {
       <div className="main-table-container">
         <h1>All Coins</h1>
 
-        <select onChange={this.props.fiatChangeHandler}>
+        <select value={this.props.fiat} onChange={this.props.fiatChangeHandler}>
           <option value="USD">USD</option>
           <option value="GBP">GBP</option>
           <option value="BTC">BTC</option>
