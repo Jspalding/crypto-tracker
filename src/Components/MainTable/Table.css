@@ -1,14 +1,18 @@
 .Main-table {
     width: 100%;
-    border: 5px solid #eaeaea;
-    border-radius: 10px;
-    padding: 0 10px;
+    background-color: #273142;
+}
+
+.Main-table thead {
+    background-color: #313d4f;
 }
 
 .Main-table thead tr th {
-    padding: 25px 0px;
-    text-align: center;
-    color: #717171;
+    text-align: left;
+    padding: 10px 25px;
+    font-size: 14px;
+    color: #7f8fa4;
+    text-transform: uppercase;
 }
 
 .Main-table tr {
@@ -16,12 +20,21 @@
 }
 
 .Main-table tr td {
-    padding: 10px 0px;
-    text-align: center;
-    border-bottom: 1px solid #f7f7f7;
-    color: #717171;
-    font-size: 14px;
     position: relative;
+    padding: 20px 25px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #fff;
+    border-bottom: solid 1px #313d4f;
+}
+
+.table-header {
+    margin-top: 75px;
+    padding: 25px 25px;
+    background-color: #273142;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 .percent-down {
@@ -36,5 +49,10 @@
     height: 12px;
     width: 12px;
     position: absolute;
-    right: 52px;
+    left: 80px;
+}
+
+.currency-highlight {
+    font-weight: bold;
+    color: #FFC107;
 }

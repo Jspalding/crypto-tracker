@@ -77,6 +77,7 @@ class CryptoFocus extends React.Component {
 
     let DetailCurrency = null;
 
+    //Again dirty option, need to figure out how to make this more scaleable
     if (fiat === "USD") {
       DetailCurrency = (
         <FocusUsd

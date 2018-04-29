@@ -1,11 +1,12 @@
 .Header {
-    background-color: #e50742;
     padding: 10px 50px;
     font-weight: 800;
     position: fixed;
     top: 0;
     width:100%;
     z-index: 1;
+    background-color: #273142;
+    border-bottom: 1px solid #313d4f;
 }
 
 .Header img {

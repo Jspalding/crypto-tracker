@@ -19,12 +19,12 @@
 /*Select*/
 
 select {
-    position: absolute;
-    right: 0;
-    top: 12px;
-    width: 100px;
-    height: 30px;
+    width: 130px;
     border-radius: 5px;
-    border: 2px solid #eaeaea;
-    color: #717171;
+    color: #ffffff;
+    float: right;
+    background-color: #273142;
+    padding: 5px 5px;
+    border: 1px solid #808689;
+    cursor: pointer;
 }

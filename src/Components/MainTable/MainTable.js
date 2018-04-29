@@ -72,18 +72,23 @@ class MainTable extends React.Component {
 
     return (
       <div className="main-table-container">
-        <h1>All Coins</h1>
 
-        <select value={this.props.fiat} onChange={this.props.fiatChangeHandler}>
-          <option value="USD">USD</option>
-          <option value="GBP">GBP</option>
-          <option value="BTC">BTC</option>
-        </select>
+      <div className="table-header">
 
-        {/*<form>
-          <input type="text" placeholder="Search" />
-          <button>Submit</button>
-        </form> */}
+          <h1>All Coins</h1>  
+
+          <select value={this.props.fiat} onChange={this.props.fiatChangeHandler}>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="BTC">BTC</option>
+          </select>
+
+          {/*<form>
+            <input type="text" placeholder="Search" />
+            <button>Submit</button>
+          </form> */}
+
+        </div>
 
         <Table
           coins={coins}
@@ -92,6 +97,7 @@ class MainTable extends React.Component {
           decimals={toDecimals}
           fiat={this.props.fiat}
         />
+
       </div>
     );
   }

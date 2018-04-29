@@ -14,9 +14,9 @@ const TableUsd = props => {
           <td>
             {coins.name} ({coins.symbol})
           </td>
-          <td>${decimals(coins.price_usd)}</td>
+          <td><span className="currency-highlight">$</span> {decimals(coins.price_usd)}</td>
           <td>{coins.available_supply}</td>
-          <td>${coins.market_cap_usd}</td>
+          <td><span className="currency-highlight">$</span> {coins.market_cap_usd}</td>
           <td>{percentageChange(coins.percent_change_24h)}</td>
         </tr>
       ))}
