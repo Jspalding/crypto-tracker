@@ -6,7 +6,7 @@ import TableGbp from "./TableCurrencies/TableGbp";
 import TableBtc from "./TableCurrencies/TableBtc";
 
 const Table = props => {
-  const { coins, percentageChange, fiat, decimals } = props;
+  const { coins, percentageChange, fiat, numberFormatRender } = props;
 
   let TableCurrency = null;
 
@@ -16,7 +16,7 @@ const Table = props => {
       <TableUsd
         coins={coins}
         percentageChange={percentageChange}
-        decimals={decimals}
+        numberFormatRender={numberFormatRender}
       />
     );
   } else if (fiat === "GBP") {
@@ -24,7 +24,7 @@ const Table = props => {
       <TableGbp
         coins={coins}
         percentageChange={percentageChange}
-        decimals={decimals}
+        numberFormatRender={numberFormatRender}
       />
     );
   } else if (fiat === "BTC") {
@@ -32,7 +32,7 @@ const Table = props => {
       <TableBtc
         coins={coins}
         percentageChange={percentageChange}
-        decimals={decimals}
+        numberFormatRender={numberFormatRender}
       />
     );
   } else {
@@ -40,7 +40,7 @@ const Table = props => {
       <TableUsd
         coins={coins}
         percentageChange={percentageChange}
-        decimals={decimals}
+        numberFormatRender={numberFormatRender}
       />
     );
   }

@@ -12,13 +12,13 @@ export const percentageChange = percent => {
   if (percent > 0) {
     return (
       <span className="percent-up">
-        {percent}% <img src="img/chev-up.png" alt="Percentage up" />
+        {percent}% <img src="/img/chev-up.png" alt="Percentage up" />
       </span>
     );
   } else if (percent < 0) {
     return (
       <span className="percent-down">
-        {percent}% <img src="img/chev-down.png" alt="Percentage down" />
+        {percent}% <img src="/img/chev-down.png" alt="Percentage down" />
       </span>
     );
   } else {
@@ -26,7 +26,8 @@ export const percentageChange = percent => {
   }
 };
 
-//Used to display only 5 decimals, mainly for price.
-export const toDecimals = num => {
-  return Number.parseFloat(num).toFixed(5);
-};
+//Improved function to seperate large numbers and remove un-needed decimals
+export const numberFormatRender = n => {
+  return ( n = parseInt(n, 10).toLocaleString(navigator.language, { minimumFractionDigits: 0 }));
+}
+

@@ -15,8 +15,12 @@
     text-transform: uppercase;
 }
 
-.Main-table tr {
+.Main-table tbody tr {
     cursor: pointer;
+}
+
+.Main-table tbody tr:hover {
+    background-color: #202937;
 }
 
 .Main-table tr td {
@@ -45,7 +49,14 @@
     color: #92dd59;
 }
 
-.percent-up img, .percent-down img {
+.Main-table tr td .percent-up img {
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    left: 80px;
+}
+
+.Main-table tr td .percent-down img {
     height: 12px;
     width: 12px;
     position: absolute;

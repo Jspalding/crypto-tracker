@@ -8,7 +8,7 @@ import FocusBtc from "./CryptoFocusCurrencies/FocusBtc";
 import {
   fetchResponseHandler,
   percentageChange,
-  toDecimals
+  numberFormatRender
 } from "../../helpers";
 
 import { API_URL } from "../../config";
@@ -16,9 +16,6 @@ import { API_URL } from "../../config";
 import "./CryptoFocus.css";
 
 class CryptoFocus extends React.Component {
-  //To do: 
-  //Style Template
-  //Return Button
 
   constructor() {
     super();
@@ -53,6 +50,7 @@ class CryptoFocus extends React.Component {
           loading: false
         });
       });
+
   };
 
   render() {
@@ -83,7 +81,7 @@ class CryptoFocus extends React.Component {
         <FocusUsd
           crypto={crypto}
           percentageChange={percentageChange}
-          decimals={toDecimals}
+          numberFormatRender={numberFormatRender}
         />
       );
     } else if (fiat === "GBP") {
@@ -91,29 +89,31 @@ class CryptoFocus extends React.Component {
         <FocusGbp
           crypto={crypto}
           percentageChange={percentageChange}
-          decimals={toDecimals}
+          numberFormatRender={numberFormatRender}
         />
       );
     } else if (fiat === "BTC") {
       DetailCurrency = (
         <FocusBtc
-        crypto={crypto}
+          crypto={crypto}
           percentageChange={percentageChange}
-          decimals={toDecimals}
+          numberFormatRender={numberFormatRender}
         />
       );
     } else {
       DetailCurrency = (
         <FocusBtc
-        crypto={crypto}
+          crypto={crypto}
           percentageChange={percentageChange}
-          decimals={toDecimals}
+          numberFormatRender={numberFormatRender}
         />
       );
     }
 
-    return (
-      <div>{DetailCurrency}</div>
+    return( 
+    <div className="focus-wrapper">
+      {DetailCurrency}
+    </div> 
     );
   }
 }

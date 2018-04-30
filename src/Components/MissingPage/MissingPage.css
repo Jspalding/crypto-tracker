@@ -6,14 +6,20 @@
 .missing-page h1 {
     font-size: 50px;
     margin-bottom: 60px;
+    display:block;
 }
 
 .missing-page-link {
     text-decoration: none;
-    border: 3px solid #ccc;
-    padding: 10px;
+    border: 3px solid #273142;
+    padding: 10px 25px;
     border-radius: 7px;
-    color: #585858;
+    color: #fff;
     font-weight: bold;
     font-size: 20px;
+    width: 10%;
+}
+
+.missing-page-link:hover {
+    background-color: #273142;
 }

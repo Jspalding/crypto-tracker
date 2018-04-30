@@ -7,7 +7,7 @@ import Search from "./TableSearch/Search";
 import {
   fetchResponseHandler,
   percentageChange,
-  toDecimals
+  numberFormatRender
 } from "../../helpers";
 import { API_URL } from "../../config";
 
@@ -49,8 +49,10 @@ class MainTable extends React.Component {
       });
   };
 
+
+
   render() {
-    const { loading, coins, error, fiat } = this.state;
+    const { loading, coins, error } = this.state;
 
     //Renders while loading data from API
     if (loading) {
@@ -75,7 +77,7 @@ class MainTable extends React.Component {
 
       <div className="table-header">
 
-          <h1>All Coins</h1>  
+          <h1>Top 25 Coins</h1>  
 
           <select value={this.props.fiat} onChange={this.props.fiatChangeHandler}>
             <option value="USD">USD</option>
@@ -92,10 +94,9 @@ class MainTable extends React.Component {
 
         <Table
           coins={coins}
-          fiat={fiat}
           percentageChange={percentageChange}
-          decimals={toDecimals}
           fiat={this.props.fiat}
+          numberFormatRender={numberFormatRender}
         />
 
       </div>
