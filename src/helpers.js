@@ -1,4 +1,6 @@
 import React from "react";
+import Up from "./chev-up.png";
+import Down from "./chev-down.png";
 
 //Fetch error helper
 export const fetchResponseHandler = response => {
@@ -12,13 +14,13 @@ export const percentageChange = percent => {
   if (percent > 0) {
     return (
       <span className="percent-up">
-        {percent}% <img src="/img/chev-up.png" alt="Percentage up" />
+        {percent}% <img src={Up} alt="Percentage up" />
       </span>
     );
   } else if (percent < 0) {
     return (
       <span className="percent-down">
-        {percent}% <img src="/img/chev-down.png" alt="Percentage down" />
+        {percent}% <img src={Down} alt="Percentage down" />
       </span>
     );
   } else {
