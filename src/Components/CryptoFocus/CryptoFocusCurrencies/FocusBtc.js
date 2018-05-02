@@ -48,7 +48,7 @@ const FocusGbp = props => {
               </div>
               <div className="focus-entry">
                 <label>Market Cap:</label>{" "}
-                <span>$ {numberFormatRender(crypto.market_cap_usd)}</span>
+                <span><span className="currency-highlight">$</span> {numberFormatRender(crypto.market_cap_usd)}</span>
               </div>
             </div>
           </div>
