@@ -5,6 +5,7 @@ import Header from "./Components/Common/Header";
 import MainTable from "./Components/MainTable/MainTable";
 import MissingPage from "./Components/MissingPage/MissingPage";
 import CryptoFocus from "./Components/CryptoFocus/CryptoFocus";
+import GlobalData from "./Components/GlobalData/GlobalData";
 
 import "./App.css";
 
@@ -25,8 +26,10 @@ class App extends Component {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           <Header />
-
+          
           <div className="Wrapper">
+          <GlobalData />
+
             <Switch>
               <Route
                 exact
