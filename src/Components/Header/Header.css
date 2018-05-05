@@ -1,21 +1,21 @@
-.Header {
+.Main-header {
     padding: 10px 50px;
     font-weight: 800;
     position: fixed;
     top: 0;
-    width:100%;
+    width: 96%;
     z-index: 1;
     background-color: #273142;
-    border-bottom: 1px solid #313d4f;
+    border-bottom: 1px solid #313d4f
 }
 
-.Header img {
+.Main-header img {
     height: 25px;
     margin-right: 10px;
     vertical-align: middle;
 }
 
-.Header h1 {
+.Main-header h1 {
     display:inline-block;
     font-size: 1.2em;
     margin: 0;

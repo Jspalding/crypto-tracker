@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Header from "./Components/Common/Header";
+import Header from "./Components/Header/Header";
 import MainTable from "./Components/MainTable/MainTable";
 import MissingPage from "./Components/MissingPage/MissingPage";
 import CryptoFocus from "./Components/CryptoFocus/CryptoFocus";
-import GlobalData from "./Components/GlobalData/GlobalData";
 
 import "./App.css";
 
@@ -28,7 +27,6 @@ class App extends Component {
           <Header />
           
           <div className="Wrapper">
-          <GlobalData />
 
             <Switch>
               <Route

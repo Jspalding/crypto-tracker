@@ -2,6 +2,7 @@
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 120px;
 }
 
 .focus-box {
@@ -39,7 +40,6 @@
 }
 
 .percentage-wrapper {
-  margin-top: 75px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;

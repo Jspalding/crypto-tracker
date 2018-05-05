@@ -4,8 +4,8 @@ import GlobalDataTemplate from "./GlobalDataTemplate/GlobalDataTemplate";
 
 import "./GlobalData.css";
 
-import { COINCAP_URL } from "../../config";
-import { fetchResponseHandler, largeNumberRender } from "../../helpers";
+import { COINCAP_URL } from "../../../config";
+import { fetchResponseHandler, largeNumberRender } from "../../../helpers";
 
 class GlobalData extends React.Component {
   constructor() {
