@@ -30,6 +30,11 @@ export const percentageChange = percent => {
 
 //Improved function to seperate large numbers and remove un-needed decimals
 export const numberFormatRender = n => {
-  return ( n = parseInt(n, 10).toLocaleString(navigator.language, { minimumFractionDigits: 0 }));
+  return n = parseInt(n, 10).toLocaleString(navigator.language, { minimumFractionDigits: 0 });
 }
 
+
+//Shortens large numbers over a billion and adds a 'b'
+export const largeNumberRender = (large) => {
+  return large > 10000000 ? (large/1000000000).toFixed(2) +'b' : large
+}

@@ -1,0 +1,31 @@
+.Global-data {
+    margin-top: 75px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.Global-data div {
+    padding: 15px 20px;
+    background-color: #273142;
+    color: #fff;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    height: 50px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.Global-data h2 {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.Global-data span {
+    font-size: 18px;
+}

@@ -5,7 +5,7 @@ import GlobalDataTemplate from "./GlobalDataTemplate/GlobalDataTemplate";
 import "./GlobalData.css";
 
 import { COINCAP_URL } from "../../config";
-import { fetchResponseHandler } from "../../helpers";
+import { fetchResponseHandler, largeNumberRender } from "../../helpers";
 
 class GlobalData extends React.Component {
   constructor() {
@@ -18,15 +18,16 @@ class GlobalData extends React.Component {
   }
 
   componentWillMount() {
-    this.fetchCrypto();
+    this.fetchGlobal();
+    setInterval(this.fetchGlobal, 300000);
   }
 
-  fetchCrypto = () => {
+  fetchGlobal = () => {
     fetch(`${COINCAP_URL}/global`)
       .then(fetchResponseHandler)
       .then(data => {
         this.setState({
-            global: data
+          global: data
         });
       })
       .catch(error => {
@@ -47,7 +48,9 @@ class GlobalData extends React.Component {
       );
     }
 
-    return <GlobalDataTemplate Global={global} />;
+    return (
+      <GlobalDataTemplate Global={global} largeNumber={largeNumberRender} />
+    );
   }
 }
 
