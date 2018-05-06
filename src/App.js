@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
 import MainTable from "./Components/MainTable/MainTable";
 import MissingPage from "./Components/MissingPage/MissingPage";
 import CryptoFocus from "./Components/CryptoFocus/CryptoFocus";
@@ -25,9 +26,8 @@ class App extends Component {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           <Header />
-          
-          <div className="Wrapper">
 
+          <div className="Wrapper">
             <Switch>
               <Route
                 exact
@@ -48,7 +48,11 @@ class App extends Component {
               />
               <Route component={MissingPage} />
             </Switch>
+
+                      <Footer />
           </div>
+
+
         </div>
       </BrowserRouter>
     );
