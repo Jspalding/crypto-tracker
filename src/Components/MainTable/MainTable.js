@@ -2,7 +2,6 @@ import React from "react";
 
 import Loader from "../Common/Loader";
 import Table from "./Table";
-import Search from "./TableSearch/Search";
 
 import {
   fetchResponseHandler,
@@ -49,8 +48,6 @@ class MainTable extends React.Component {
       });
   };
 
-
-
   render() {
     const { loading, coins, error } = this.state;
 
@@ -84,11 +81,6 @@ class MainTable extends React.Component {
             <option value="GBP">GBP</option>
             <option value="BTC">BTC</option>
           </select>
-
-          {/*<form>
-            <input type="text" placeholder="Search" />
-            <button>Submit</button>
-          </form> */}
 
         </div>
 

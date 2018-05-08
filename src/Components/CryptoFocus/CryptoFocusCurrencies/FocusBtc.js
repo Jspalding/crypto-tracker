@@ -9,7 +9,7 @@ const FocusGbp = props => {
   return (
     <article>
       {crypto.map(crypto => (
-        <div className="main">
+        <div className="main" key={crypto.name}>
           <div className="percentage-wrapper">
             <div className="percentage-change">
               <h2>1H CHANGE</h2>

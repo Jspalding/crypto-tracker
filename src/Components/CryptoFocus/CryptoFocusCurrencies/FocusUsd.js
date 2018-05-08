@@ -10,7 +10,7 @@ const FocusUsd = props => {
 
     <article>
       {crypto.map(crypto => (
-        <div className="main">
+        <div className="main" key={crypto.name}>
           <div className="percentage-wrapper">
 
             <div className="percentage-change">

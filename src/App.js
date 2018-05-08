@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer";
 import MainTable from "./Components/MainTable/MainTable";
 import MissingPage from "./Components/MissingPage/MissingPage";
 import CryptoFocus from "./Components/CryptoFocus/CryptoFocus";
+import News from "./Components/NewsFeed/NewsFeed";
 
 import "./App.css";
 
@@ -48,11 +49,9 @@ class App extends Component {
               />
               <Route component={MissingPage} />
             </Switch>
-
-                      <Footer />
+            <News />
+            <Footer />
           </div>
-
-
         </div>
       </BrowserRouter>
     );
