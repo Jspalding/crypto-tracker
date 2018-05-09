@@ -8,8 +8,13 @@ const NewsArticle = props => {
   return (
     <article>
       {news.map((news, index) => (
-        <div key={index}>
-          <div>{news.description}</div>
+        <div key={index} className="article-wrapper">
+          <h2>{news.title}</h2>
+          <img src={news.urlToImage} alt="article img"/>
+          <p>{news.description}</p>
+          <a class="source-btn" href={news.url} target="_blank" rel="noopener noreferrer">
+            SOURCE
+          </a>
         </div>
       ))}
     </article>

@@ -56,6 +56,7 @@ body {
 .Wrapper {
   width: 75%;
   margin: auto;
+  margin-top: 125px;
 }
 
 h1 {
@@ -63,4 +64,22 @@ h1 {
   font-size: 26px;
   font-weight: bold;
   display: inline-block;
+}
+
+.toggle-news-btn {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #92dd59;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 124px;
+    position: fixed;
+    left: 0;
+}
+
+.toggle-news-btn:hover {
+    background-color: #92dd59;
 }

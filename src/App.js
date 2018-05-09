@@ -12,7 +12,9 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    fiat: "USD"
+    fiat: "USD",
+    showNews: false,
+    newsBtnText: "Show Latest News"
   };
 
   //Simple handler to take input to change currency view
@@ -22,13 +24,49 @@ class App extends Component {
     });
   };
 
+  //Toggles news state to display it
+  toggleNews = () => {
+    const show = this.state.showNews;
+    this.setState({
+      showNews: !show
+    });
+  };
+  toggleBtnText = () => {
+    if (this.state.showNews === true) {
+      this.setState({
+        newsBtnText: "Show Latest News"
+      });
+    } else if (this.state.showNews === false) {
+      this.setState({
+        newsBtnText: "Close"
+      });
+    }
+  };
+
   render() {
+    let news = null;
+
+    if (this.state.showNews) {
+      news = <News />;
+    }
+
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           <Header />
 
           <div className="Wrapper">
+            <a
+              className="toggle-news-btn"
+              onClick={() => {
+                this.toggleNews();
+                this.toggleBtnText();
+              }}
+            >
+              {this.state.newsBtnText}
+            </a>
+
+            {news}
             <Switch>
               <Route
                 exact
@@ -49,7 +87,6 @@ class App extends Component {
               />
               <Route component={MissingPage} />
             </Switch>
-            <News />
             <Footer />
           </div>
         </div>

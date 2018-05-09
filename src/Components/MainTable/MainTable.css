@@ -5,9 +5,9 @@
 /*Loader wrap*/
 
 .loader-wrapper {
-    position: absolute;
-    top: 30%;
-    left: 46%;
+    margin: auto;
+    width: 100px;
+    margin-top: 80px;
 }
 
 .loader-wrapper p {

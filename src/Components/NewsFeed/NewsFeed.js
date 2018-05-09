@@ -64,6 +64,7 @@ class News extends React.Component {
 
     return (
       <div className="news-wrapper">
+      <h1>Latest Cryotocurrency News</h1>
         <NewsArticle news={news} />
       </div>
     );
