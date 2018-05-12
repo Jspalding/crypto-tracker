@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import Loader from "../Common/Loader";
 import FocusUsd from "./CryptoFocusCurrencies/FocusUsd";
@@ -116,6 +117,10 @@ class CryptoFocus extends React.Component {
     </div> 
     );
   }
+}
+
+CryptoFocus.propTypes = {
+  fiat: PropTypes.string
 }
 
 export default CryptoFocus;

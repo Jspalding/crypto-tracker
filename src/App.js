@@ -14,7 +14,8 @@ class App extends Component {
   state = {
     fiat: "USD",
     showNews: false,
-    newsBtnText: "Show Latest News"
+    newsBtnText: "Show Latest News",
+    btnColor: "#92dd59"
   };
 
   //Simple handler to take input to change currency view
@@ -24,7 +25,7 @@ class App extends Component {
     });
   };
 
-  //Toggles news state to display it
+  //Toggles news state to display it, second function changes button text state
   toggleNews = () => {
     const show = this.state.showNews;
     this.setState({
@@ -34,11 +35,13 @@ class App extends Component {
   toggleBtnText = () => {
     if (this.state.showNews === true) {
       this.setState({
-        newsBtnText: "Show Latest News"
+        newsBtnText: "Show Latest News",
+        btnColor: "#92dd59"
       });
     } else if (this.state.showNews === false) {
       this.setState({
-        newsBtnText: "Close"
+        newsBtnText: "Close",
+        btnColor: "#d90023"
       });
     }
   };
@@ -62,6 +65,7 @@ class App extends Component {
                 this.toggleNews();
                 this.toggleBtnText();
               }}
+              style={{backgroundColor: this.state.btnColor}}
             >
               {this.state.newsBtnText}
             </a>

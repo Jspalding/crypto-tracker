@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Loader from "../Common/Loader";
 import Table from "./Table";
@@ -50,6 +51,7 @@ class MainTable extends React.Component {
 
   render() {
     const { loading, coins, error } = this.state;
+    const { fiat, fiatChangeHandler } = this.props;
 
     //Renders while loading data from API
     if (loading) {
@@ -71,17 +73,14 @@ class MainTable extends React.Component {
 
     return (
       <div className="main-table-container">
+        <div className="table-header">
+          <h1>Top 25 Coins</h1>
 
-      <div className="table-header">
-
-          <h1>Top 25 Coins</h1>  
-
-          <select value={this.props.fiat} onChange={this.props.fiatChangeHandler}>
+          <select value={fiat} onChange={fiatChangeHandler}>
             <option value="USD">USD</option>
             <option value="GBP">GBP</option>
             <option value="BTC">BTC</option>
           </select>
-
         </div>
 
         <Table
@@ -90,10 +89,14 @@ class MainTable extends React.Component {
           fiat={this.props.fiat}
           numberFormatRender={numberFormatRender}
         />
-
       </div>
     );
   }
 }
+
+MainTable.propTypes = {
+  fiat: PropTypes.string,
+  fiatChangeHandler: PropTypes.func
+};
 
 export default MainTable;

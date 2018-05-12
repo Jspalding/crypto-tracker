@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import ".././CryptoFocus.css";
@@ -56,5 +57,11 @@ const FocusUsd = props => {
     </article>
   );
 };
+
+FocusUsd.propTypes = {
+  crypto: PropTypes.array,
+  percentageChange: PropTypes.func,
+  numberFormatRender: PropTypes.func
+}
 
 export default FocusUsd;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { withRouter } from "react-router-dom";
 
 import "./../Table.css";
@@ -23,5 +24,12 @@ const TableBtc = props => {
     </tbody>
   );
 };
+
+TableBtc.propTypes = {
+  coins: PropTypes.array,
+  percentageChange: PropTypes.func,
+  numberFormatRender: PropTypes.func,
+  history: PropTypes.object
+}
 
 export default withRouter(TableBtc);

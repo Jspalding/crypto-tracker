@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import "./../GlobalData.css";
 
@@ -22,5 +23,13 @@ const GlobalDataTemplate = props => {
     </div>
   );
 };
+
+GlobalDataTemplate.propTypes = {
+  Global: PropTypes.oneOfType ([
+    PropTypes.array,
+    PropTypes.object
+  ]),
+  largeNumber: PropTypes.func,
+}
 
 export default GlobalDataTemplate;

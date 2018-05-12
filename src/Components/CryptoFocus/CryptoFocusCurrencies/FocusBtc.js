@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 import "./../CryptoFocus.css";
 
-const FocusGbp = props => {
+const FocusBtc = props => {
   const { percentageChange, numberFormatRender, crypto } = props;
 
   return (
@@ -62,4 +63,10 @@ const FocusGbp = props => {
   );
 };
 
-export default FocusGbp;
+FocusBtc.propTypes = {
+  crypto: PropTypes.array,
+  percentageChange: PropTypes.func,
+  numberFormatRender: PropTypes.func
+}
+
+export default FocusBtc;

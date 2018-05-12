@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import "./../NewsFeed.css";
 
@@ -12,7 +13,7 @@ const NewsArticle = props => {
           <h2>{news.title}</h2>
           <img src={news.urlToImage} alt="article img"/>
           <p>{news.description}</p>
-          <a class="source-btn" href={news.url} target="_blank" rel="noopener noreferrer">
+          <a className="source-btn" href={news.url} target="_blank" rel="noopener noreferrer">
             SOURCE
           </a>
         </div>
@@ -20,5 +21,9 @@ const NewsArticle = props => {
     </article>
   );
 };
+
+NewsArticle.propTypes = {
+  news: PropTypes.array
+}
 
 export default NewsArticle;

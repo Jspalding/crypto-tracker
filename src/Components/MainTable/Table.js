@@ -1,9 +1,11 @@
 import React from "react";
-import "./Table.css";
+import PropTypes from 'prop-types';
 
 import TableUsd from "./TableCurrencies/TableUsd";
 import TableGbp from "./TableCurrencies/TableGbp";
 import TableBtc from "./TableCurrencies/TableBtc";
+
+import "./Table.css";
 
 const Table = props => {
   const { coins, percentageChange, fiat, numberFormatRender } = props;
@@ -64,5 +66,12 @@ const Table = props => {
     </div>
   );
 };
+
+Table.propTypes = {
+  coins: PropTypes.array,
+  percentageChange: PropTypes.func,
+  fiat: PropTypes.string,
+  numberFormatRender: PropTypes.func
+}
 
 export default Table;
