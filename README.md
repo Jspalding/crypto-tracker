@@ -4,7 +4,7 @@ A cryptocurrency tracker which displays the latest prices of the top 25 coins fr
 
 The app was built using the latest version of Reactjs, ES6 & CSS.
 
-[View CoinCheck Here]("https://jspalding.github.io/crypto-tracker/")
+[View CoinCheck Here](https://jspalding.github.io/crypto-tracker/)
 
 ## To Do
 
